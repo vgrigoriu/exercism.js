@@ -1,3 +1,8 @@
 export const toRna = (dna) => {
-  return dna;
+  return mapping[dna];
 };
+
+const mapping = {
+  "": "",
+  "C": "G"
+}
