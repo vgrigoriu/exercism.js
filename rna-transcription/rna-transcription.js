@@ -5,5 +5,6 @@ export const toRna = (dna) => {
 const mapping = {
   "": "",
   "C": "G",
-  "G": "C"
+  "G": "C",
+  "T": "A"
 }
