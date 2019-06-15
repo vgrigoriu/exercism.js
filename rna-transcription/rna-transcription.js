@@ -1,9 +1,8 @@
 export const toRna = (dna) => {
-  return mapping[dna];
+  return dna.split("").map(n => mapping[n]).join("");
 };
 
 const mapping = {
-  "": "",
   "C": "G",
   "G": "C",
   "T": "A",
