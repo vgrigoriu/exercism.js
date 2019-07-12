@@ -1,7 +1,7 @@
 export const toRna = dna => {
   return dna
     .split("")
-    .map(n => mapping[n])
+    .map(nucleotide => mapping[nucleotide])
     .join("");
 };
 
