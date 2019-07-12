@@ -1,8 +1,14 @@
-//
-// This is only a SKELETON file for the 'Space Age' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+const secondsInEarthYear = 31557600;
 
-export const age = () => {
-  return 31.69;
+const orbitalPeriods = {
+  "earth":   1,
+  "mercury": 0.2408467
+}
+
+export const age = (planet, seconds) => {
+  return round(seconds / secondsInEarthYear / orbitalPeriods[planet]);
 };
+
+const round = (n) => {
+  return Math.round(n * 100) / 100;
+}
