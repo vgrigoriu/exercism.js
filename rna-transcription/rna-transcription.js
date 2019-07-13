@@ -1,5 +1,7 @@
 export const toRna = dna => {
-  return dna.replace(/[CGTA]/g, complement);
+  return dna
+  .split("")
+  .reduce((rna, nucleotide) => rna + complement(nucleotide), "");
 };
 
 const complement = nucleotide => {
