@@ -5,11 +5,11 @@ export const toRna = dna => {
 };
 
 const complement = nucleotide => {
-  if (mapping.hasOwnProperty(nucleotide)) {
+  if (nucleotide in mapping) {
     return mapping[nucleotide]
   }
 
-  throw new Error
+  throw new Error("Invalid nucleotide: " + nucleotide)
 }
 
 const mapping = {
