@@ -1,13 +1,13 @@
 export const toRna = dna => {
-  return dna.replace(/[CGTA]/g, complement);
+  return dna.replace(/./g, complement);
 };
 
 const complement = nucleotide => {
-  if (mapping.hasOwnProperty(nucleotide)) {
+  if (nucleotide in mapping) {
     return mapping[nucleotide]
   }
 
-  throw new Error
+  throw new Error("Invalid nucleotide: " + nucleotide)
 }
 
 const mapping = {
