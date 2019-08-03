@@ -3,6 +3,7 @@
 // convenience to get you started writing code faster.
 //
 
-export const isPangram = () => {
-  return false;
+export const isPangram = (s) => {
+  let distinctLetters = new Set(s.split(''))
+  return distinctLetters.size == 26
 };
