@@ -4,6 +4,6 @@
 //
 
 export const isPangram = (s) => {
-  let distinctLetters = new Set(s.split(''))
+  let distinctLetters = new Set(s.split('').filter(c => c.match(/[a-z]/)))
   return distinctLetters.size == 26
 };
