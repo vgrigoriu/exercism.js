@@ -1,9 +1,6 @@
-export const isPangram = s => {
+export const isPangram = sentence => {
   let distinctLetters = new Set(
-    s
-      .split("")
-      .filter(c => c.match(/[a-z]/i))
-      .map(c => c.toLowerCase())
+    Array.from(sentence.toLowerCase().replace(/[^a-z]/g, ""))
   );
   return distinctLetters.size === 26;
 };
