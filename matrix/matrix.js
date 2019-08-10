@@ -1,9 +1,12 @@
 export class Matrix {
-  constructor() {
+
+  constructor(string) {
+    this.matrix = string.split('\n').map(line => line.split(' ').map(n => Number(n)))
+    //console.log(lines)
   }
 
   get rows() {
-    return [[1], [3,4]];``
+    return this.matrix;
   }
 
   get columns() {
