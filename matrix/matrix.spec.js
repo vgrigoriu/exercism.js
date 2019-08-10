@@ -25,7 +25,7 @@ describe('Matrix', () => {
     expect(new Matrix('1 2 3\n4 5 6\n7 8 9').columns[2]).toEqual([3, 6, 9]);
   });
 
-  xtest('can extract column from non-square matrix', () => {
+  test('can extract column from non-square matrix', () => {
     expect(new Matrix('1 2 3\n4 5 6\n7 8 9\n8 7 6').columns[2]).toEqual([3, 6, 9, 6]);
   });
 
