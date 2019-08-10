@@ -3,7 +3,7 @@ export class Matrix {
   }
 
   get rows() {
-    return [[1]];``
+    return [[1], [3,4]];``
   }
 
   get columns() {
