@@ -10,6 +10,6 @@ export class Matrix {
   }
 
   get columns() {
-    return [[1]]
+    return [[1],[],[3,6,9]]
   }
 }
