@@ -1,21 +1,23 @@
 export class Matrix {
   constructor(string) {
-    this.matrix = string
-      .split("\n")
-      .map(line => line.split(" ").map(n => Number(n)));
+    this.matrix = string.split("\n").map(line => line.split(" ").map(Number));
+    this.transposedMatrix = this.transpose();
   }
 
   get rows() {
-    return this.matrix;
+    return this.matrix.map(row => row.slice());
   }
 
   get columns() {
-    let transposedMatrix = Array(this.matrix[0].length)
-      .fill(undefined)
-      .map(() => []);
+    return this.transposedMatrix.map(row => row.slice());
+  }
 
-    for (let row = 0; row < this.matrix.length; row++) {
-      for (let col = 0; col < this.matrix[row].length; col++) {
+  transpose() {
+    let transposedMatrix = Array(this.matrix[0].length);
+
+    for (let col = 0; col < transposedMatrix.length; col++) {
+      transposedMatrix[col] = [];
+      for (let row = 0; row < this.matrix.length; row++) {
         transposedMatrix[col].push(this.matrix[row][col]);
       }
     }
