@@ -1,4 +1,7 @@
 export const hey = (message) => {
+  if (isSilence(message)) {
+    return 'Fine. Be that way!'
+  }
   if (isShout(message) && isQuestion(message)) {
     return 'Calm down, I know what I\'m doing!'
   }
@@ -10,6 +13,10 @@ export const hey = (message) => {
   }
   return 'Whatever.'
 };
+
+const isSilence = (message) => {
+  return message === ''
+}
 
 const isShout = (message) => {
   return message.match(/[A-Z]/) && message.toUpperCase() === message
