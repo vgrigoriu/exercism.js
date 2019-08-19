@@ -1,7 +1,7 @@
 export class Matrix {
   constructor(string) {
     this.matrix = string.split("\n").map(line => line.split(" ").map(Number));
-    this.transposedMatrix = this.transpose();
+    this.transposedMatrix = this.transpose(this.matrix);
   }
 
   get rows() {
@@ -12,13 +12,13 @@ export class Matrix {
     return this.transposedMatrix.map(row => row.slice());
   }
 
-  transpose() {
+  transpose(original) {
     let transposedMatrix = [];
 
-    for (let col = 0; col < transposedMatrix.length; col++) {
+    for (let col = 0; col < original[0].length; col++) {
       transposedMatrix[col] = [];
-      for (let row = 0; row < this.matrix.length; row++) {
-        transposedMatrix[col].push(this.matrix[row][col]);
+      for (let row = 0; row < original.length; row++) {
+        transposedMatrix[col].push(original[row][col]);
       }
     }
 
