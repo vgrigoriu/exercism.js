@@ -13,7 +13,7 @@ export class Matrix {
   }
 
   transpose() {
-    let transposedMatrix = Array(this.matrix[0].length);
+    let transposedMatrix = [];
 
     for (let col = 0; col < transposedMatrix.length; col++) {
       transposedMatrix[col] = [];
