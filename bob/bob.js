@@ -12,7 +12,7 @@ export const hey = (message) => {
 };
 
 const isShout = (message) => {
-  return message.toUpperCase() === message
+  return message.match(/[A-Z]/) && message.toUpperCase() === message
 }
 
 const isQuestion = (message) => {
