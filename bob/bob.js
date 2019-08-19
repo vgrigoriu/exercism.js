@@ -20,6 +20,7 @@ const isSilence = (message) => {
 }
 
 const isShout = (message) => {
+  // there's at least one letter and all of them are uppercase
   return message.match(/[A-Z]/) && message.toUpperCase() === message
 }
 
