@@ -1,4 +1,5 @@
 export const hey = (message) => {
+  message = message.trim()
   if (isSilence(message)) {
     return 'Fine. Be that way!'
   }
