@@ -8,11 +8,15 @@ export class Triangle {
     this._rows = [[1]]
     for (let i = 1; i < noOfRows; i++) {
       let row = [];
+      let prevRow = this._rows[i-1]
       // copy first element
-      row.push(this._rows[i-1][0])
-      // TODO: middle of the row
+      row.push(prevRow[0])
+      // compute inner elements
+      for (let j = 1; j < i; j++) {
+        row.push(prevRow[j - 1] + prevRow[j])
+      }
       // copy last element
-      row.push(this._rows[i-1][i-1])
+      row.push(prevRow[i-1])
 
       this._rows.push(row)
     }
