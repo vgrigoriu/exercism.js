@@ -4,7 +4,7 @@
 //
 
 export class Triangle {
-  constructor() {
+  constructor(noOfRows) {
   }
 
   get lastRow() {
