@@ -23,7 +23,7 @@ export class Triangle {
   }
 
   get lastRow() {
-    throw new Error("Remove this statement and implement this function");
+    return this._rows[this._rows.length - 1];
   }
 
   get rows() {
