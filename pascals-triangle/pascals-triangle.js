@@ -5,6 +5,17 @@
 
 export class Triangle {
   constructor(noOfRows) {
+    this._rows = [[1]]
+    for (let i = 1; i < noOfRows; i++) {
+      let row = [];
+      // copy first element
+      row.push(this._rows[i-1][0])
+      // TODO: middle of the row
+      // copy last element
+      row.push(this._rows[i-1][i-1])
+
+      this._rows.push(row)
+    }
   }
 
   get lastRow() {
@@ -12,6 +23,6 @@ export class Triangle {
   }
 
   get rows() {
-    return [[1]];
+    return this._rows;
   }
 }
