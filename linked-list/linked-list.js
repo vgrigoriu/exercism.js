@@ -35,8 +35,10 @@ export class LinkedList {
     return node.payload
   }
 
-  unshift() {
-    throw new Error("Remove this statement and implement this function");
+  unshift(payload) {
+    let node = new Node(payload)
+    node.next = this.first
+    this.first = node
   }
 
   delete() {
