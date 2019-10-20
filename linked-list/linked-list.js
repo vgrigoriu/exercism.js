@@ -3,13 +3,23 @@
 // convenience to get you started writing code faster.
 //
 
+class Node {
+  constructor(payload) {
+    this.payload = payload
+  }
+}
+
 export class LinkedList {
-  push() {
-    throw new Error("Remove this statement and implement this function");
+  push(what) {
+    let node = new Node(what)
+    node.next = this.first
+    this.first = node
   }
 
   pop() {
-    throw new Error("Remove this statement and implement this function");
+    let node = this.first
+    this.first = this.first.next
+    return node.payload
   }
 
   shift() {
