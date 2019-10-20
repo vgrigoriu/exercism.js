@@ -29,7 +29,7 @@ describe('LinkedList', () => {
     expect(list.pop()).toBe(10);
     expect(list.pop()).toBe(20);
   });
-  xtest('example', () => {
+  test('example', () => {
     const list = new LinkedList();
     list.push(10);
     list.push(20);
@@ -42,7 +42,7 @@ describe('LinkedList', () => {
     expect(list.pop()).toBe(50);
     expect(list.shift()).toBe(30);
   });
-  xtest('can count its elements', () => {
+  test('can count its elements', () => {
     const list = new LinkedList();
     expect(list.count()).toBe(0);
     list.push(10);

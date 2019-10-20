@@ -10,6 +10,10 @@ class Node {
 }
 
 export class LinkedList {
+  constructor() {
+    this._count = 0
+  }
+
   push(what) {
     let node = new Node(what)
     if (this.last === undefined) {
@@ -21,17 +25,20 @@ export class LinkedList {
       node.prev = this.last
       this.last = node
     }
+    this._count++
   }
 
   pop() {
     let node = this.last
     this.last = this.last.prev
+    this._count--
     return node.payload
   }
 
   shift() {
     let node = this.first
     this.first = this.first.next
+    this._count--
     return node.payload
   }
 
@@ -44,6 +51,7 @@ export class LinkedList {
       this.first.prev = node
     }
     this.first = node
+    this._count++
   }
 
   delete() {
@@ -51,6 +59,6 @@ export class LinkedList {
   }
 
   count() {
-    throw new Error("Remove this statement and implement this function");
+    return this._count
   }
 }
