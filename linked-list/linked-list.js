@@ -38,6 +38,11 @@ export class LinkedList {
   unshift(payload) {
     let node = new Node(payload)
     node.next = this.first
+    if (this.last === undefined) {
+      this.last = node
+    } else {
+      this.first.prev = node
+    }
     this.first = node
   }
 
