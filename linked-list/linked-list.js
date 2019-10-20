@@ -30,7 +30,9 @@ export class LinkedList {
   }
 
   shift() {
-    throw new Error("Remove this statement and implement this function");
+    let node = this.first
+    this.first = this.first.next
+    return node.payload
   }
 
   unshift() {
