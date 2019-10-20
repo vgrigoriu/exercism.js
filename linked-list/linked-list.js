@@ -58,8 +58,16 @@ export class LinkedList {
   delete(n) {
     for (let node = this.first; node !== undefined; node = node.next) {
       if (node.payload === n) {
-        node.prev.next = node.next
-        node.next.prev = node.prev
+        if (node.prev !== undefined) {
+          node.prev.next = node.next
+        } else {
+          this.first = node.next
+        }
+        if (node.next !== undefined) {
+          node.next.prev = node.prev
+        } else {
+          this.last = node.prev
+        }
         this._count--
       }
     }
