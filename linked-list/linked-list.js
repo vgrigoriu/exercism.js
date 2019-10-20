@@ -1,8 +1,3 @@
-//
-// This is only a SKELETON file for the 'Linked List' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
 class Node {
   constructor(payload) {
     this.payload = payload
@@ -60,8 +55,14 @@ export class LinkedList {
     this._count++
   }
 
-  delete() {
-    throw new Error("Remove this statement and implement this function");
+  delete(n) {
+    for (let node = this.first; node !== undefined; node = node.next) {
+      if (node.payload === n) {
+        node.prev.next = node.next
+        node.next.prev = node.prev
+        this._count--
+      }
+    }
   }
 
   count() {
