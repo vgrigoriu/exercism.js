@@ -69,6 +69,7 @@ export class LinkedList {
           this.last = node.prev
         }
         this._count--
+        return
       }
     }
   }
