@@ -50,7 +50,7 @@ describe('LinkedList', () => {
     list.push(20);
     expect(list.count()).toBe(2);
   });
-  xtest('sets head/tail after popping last element', () => {
+  test('sets head/tail after popping last element', () => {
     const list = new LinkedList();
     list.push(10);
     list.pop();
@@ -58,7 +58,7 @@ describe('LinkedList', () => {
     expect(list.count()).toBe(1);
     expect(list.pop()).toBe(20);
   });
-  xtest('sets head/tail after shifting last element', () => {
+  test('sets head/tail after shifting last element', () => {
     const list = new LinkedList();
     list.unshift(10);
     list.shift();

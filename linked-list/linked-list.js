@@ -31,6 +31,9 @@ export class LinkedList {
   pop() {
     let node = this.last
     this.last = this.last.prev
+    if (this.last === undefined) {
+      this.first = undefined
+    }
     this._count--
     return node.payload
   }
@@ -38,6 +41,9 @@ export class LinkedList {
   shift() {
     let node = this.first
     this.first = this.first.next
+    if (this.first === undefined) {
+      this.last = undefined
+    }
     this._count--
     return node.payload
   }
