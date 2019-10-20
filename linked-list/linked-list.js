@@ -12,13 +12,20 @@ class Node {
 export class LinkedList {
   push(what) {
     let node = new Node(what)
-    node.next = this.first
-    this.first = node
+    if (this.last === undefined) {
+      // the list was empty
+      this.first = node
+      this.last = node
+    } else {
+      this.last.next = node
+      node.prev = this.last
+      this.last = node
+    }
   }
 
   pop() {
-    let node = this.first
-    this.first = this.first.next
+    let node = this.last
+    this.last = this.last.prev
     return node.payload
   }
 
